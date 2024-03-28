@@ -30,14 +30,14 @@ function Hashtag({ icon, keyword, click, id, test, handleClickEvent }) {
   const isIcon = icon ? <span>{icon}</span> : '';
 
   return (
-    <button
+    <div
       className={`hashtag-button mb-6pxr mr-1 text-11pxr ${className || toggle}`}
       onClick={handleHashtagClick}
       checked={isClicked}
     >
       {isIcon}
       <span>{keyword}</span>
-    </button>
+    </div>
   );
 }
 

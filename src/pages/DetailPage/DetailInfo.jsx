@@ -14,7 +14,7 @@ function DetailInfo() {
         <div className="mb-3 flex flex-col gap-3 pl-2">
           <div className="flex items-start gap-3">
             <img src={clock} alt="영업시간 안내" className="mt-1.5" />
-            <span
+            <div
               dangerouslySetInnerHTML={{
                 __html: cafe?.businessHours,
               }}
