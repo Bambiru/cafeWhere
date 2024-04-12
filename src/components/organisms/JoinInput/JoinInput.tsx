@@ -1,11 +1,11 @@
-import LoginButton from '@/components/atoms/LoginButton/LoginButton';
+import { LoginButton } from '@/components/atoms';
 import { InputField } from '@/components/molecules';
+import { CheckBox } from '@/components/organisms';
 import pb from '@/utils/pocketbase';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CheckBox from '../CheckBox/JoinInputCheckBox';
 
-const isEmail = (email) => {
+const isEmail = (email: string) => {
   const emailRegex =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
@@ -13,24 +13,24 @@ const isEmail = (email) => {
 };
 
 /* 특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식 */
-const isPassword = (password) => {
+const isPassword = (password: string) => {
   const passwordRegex =
     /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
 
   return passwordRegex.test(password);
 };
-const isPhone = (phone) => {
+const isPhone = (phone: string) => {
   const phoneRegex = /^[0-9]{10,11}$/;
 
   return phoneRegex.test(phone);
 };
-const isBirth = (birth) => {
+const isBirth = (birth: string) => {
   const birthRegex = /^[0-9]{6,8}$/;
 
   return birthRegex.test(birth);
 };
 
-const isText = (text) => {
+const isText = (text: string) => {
   return text;
 };
 
@@ -50,7 +50,7 @@ function JoinInput() {
 
   const navigate = useNavigate();
 
-  const handleJoin = (e) => {
+  const handleJoin = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     pb.collection('users')
       .create(userInfo)
@@ -74,7 +74,7 @@ function JoinInput() {
           placeholder="이메일을 입력해주세요."
           required
           message="이메일 형식에 맞게 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               email: value,
@@ -89,7 +89,7 @@ function JoinInput() {
           placeholder="비밀번호를 입력해주세요."
           required
           message="특수문자를 포함하여 8~15자 이내로 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               password: value,
@@ -106,7 +106,7 @@ function JoinInput() {
           placeholder="비밀번호를 입력해주세요."
           required
           message="비밀번호를 한 번 더 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               passwordConfirm: value,
@@ -121,7 +121,7 @@ function JoinInput() {
           label="이름"
           type="text"
           placeholder="영어로 이름을 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               username: value,
@@ -134,7 +134,7 @@ function JoinInput() {
           label="닉네임"
           type="text"
           placeholder="닉네임을 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               nickname: value,
@@ -148,7 +148,7 @@ function JoinInput() {
           type="text"
           placeholder="- 제외하고 번호 입력"
           message="번호를 제대로 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               phone: value,
@@ -162,7 +162,7 @@ function JoinInput() {
           type="text"
           placeholder="YYYYMMDD"
           message="생년월일을 제대로 입력해주세요."
-          setUser={(value) =>
+          setUser={(value: string) =>
             setUserInfo({
               ...userInfo,
               birth: value,

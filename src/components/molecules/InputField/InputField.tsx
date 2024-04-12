@@ -1,10 +1,23 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import {
   ErrorMessage,
   PasswordIcon,
   UserInfoInput,
   UserInfoLabel,
 } from '@/components/atoms';
+
+interface inputField {
+  id: string;
+  label: string;
+  type: string;
+  placeholder: string;
+  required?: true;
+  message?: string;
+  setUser: (value: string) => void;
+  validateInput?: (value: string) => boolean | string;
+  passwordVisible?: boolean;
+  setPasswordVisible?: Dispatch<SetStateAction<boolean>>;
+}
 
 function InputField({
   id,
@@ -17,7 +30,7 @@ function InputField({
   validateInput,
   passwordVisible,
   setPasswordVisible,
-}) {
+}: inputField) {
   const [error, setError] = useState({
     borderColor: 'border-greyscale-70',
     message: '',

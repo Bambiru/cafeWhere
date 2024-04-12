@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface headerBar {
   name?: string;
-  showHomeBtn: boolean;
+  showHomeBtn?: boolean;
 }
 
 function HeaderBar({ name, showHomeBtn }: headerBar) {
