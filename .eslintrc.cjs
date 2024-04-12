@@ -12,6 +12,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:react-hooks/recommended',
     'plugin:tailwindcss/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   overrides: [
     {
@@ -24,11 +25,13 @@ module.exports = {
       },
     },
   ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'tailwindcss'],
+  plugins: ['react', 'tailwindcss', '@typescript-eslint'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
