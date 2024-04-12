@@ -1,6 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
-function HeaderBar(props) {
+interface headerBar {
+  name?: string;
+  showHomeBtn: boolean;
+}
+
+function HeaderBar({ name, showHomeBtn }: headerBar) {
   const backNavigation = useNavigate();
 
   const handleNavigateHome = () => {
@@ -18,9 +23,9 @@ function HeaderBar(props) {
           <img src="/images/login/arrow.svg" alt="뒤로가기" />
         </button>
 
-        <span className="text-xl font-bold">{props.name}</span>
+        <span className="text-xl font-bold">{name}</span>
 
-        {props.showHomeBtn ? (
+        {showHomeBtn ? (
           <button type="button" onClick={handleNavigateHome}>
             <img
               className="justify-center"
