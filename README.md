@@ -35,7 +35,7 @@
 
 <img width="200" src="https://github.com/FRONTENDSCHOOL8/cafeWhere/assets/148926098/e167dfa5-2ced-42f9-ba15-2bfd2a2cd1ea" alt="메인로고">
 
-### 🔗 배포주소: [카페어디](https://where-cafe.vercel.app/)
+### 🔗 배포주소: [카페어디](https://cafewhere.vercel.app/)
 
 ### 🥨 프로젝트 소개
 
