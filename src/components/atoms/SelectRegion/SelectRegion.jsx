@@ -15,7 +15,7 @@ function SelectRegion() {
       <select
         name="region"
         id="region"
-        className="bg-transparent"
+        className="rounded-md border border-gray-400 bg-transparent px-2 py-1"
         onChange={handleChangeRegion}
         value={region}
       >

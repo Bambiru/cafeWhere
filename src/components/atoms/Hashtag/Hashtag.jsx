@@ -31,7 +31,7 @@ function Hashtag({ icon, keyword, click, id, test, handleClickEvent }) {
 
   return (
     <div
-      className={`hashtag-button mb-6pxr mr-1 text-11pxr ${className || toggle}`}
+      className={`hashtag-button mb-6pxr mr-1 text-11pxr ${className || toggle} cursor-pointer`}
       onClick={handleHashtagClick}
       checked={isClicked}
     >
