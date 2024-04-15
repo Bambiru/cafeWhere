@@ -1,8 +1,8 @@
-function NoResult() {
+function NoResult({ children }) {
   return (
-    <div className="m-auto">
+    <div className="mt-[50%] flex flex-col items-center justify-center">
       <img src="/cup.png" alt="빈 컵" className="mx-auto w-120pxr" />
-      <p>검색 결과가 없습니다.</p>
+      <p>{children}</p>
     </div>
   );
 }

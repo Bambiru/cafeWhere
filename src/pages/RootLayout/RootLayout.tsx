@@ -1,4 +1,3 @@
-import { TabBar } from '@/components/atoms';
 import { Outlet } from 'react-router-dom';
 
 function RootLayout() {

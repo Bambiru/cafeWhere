@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
-import { AllHashtagList } from '..';
 import { HeaderBar } from '@/components/atoms';
-import { useParams } from 'react-router-dom';
+import { AllHashtagList } from '@/components/organisms';
+import { Link, useParams } from 'react-router-dom';
 
 function ReviewHashTagPage() {
   const params = useParams();

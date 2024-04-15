@@ -5,26 +5,23 @@ import CafeListItem from '@/components/organisms/CafeListItem/CafeListItem';
 import pb from '@/utils/pocketbase';
 import { useLoaderData } from 'react-router-dom';
 
-export const fetchSearch = async ({ params }) => {
-  const { keyword } = params;
+interface Cafe {
+  id: string;
+  cafeName: string;
+}
 
-  let data;
+interface SearchResult {
+  items: Cafe[];
+}
 
-  if (keyword) {
-    data = await pb.collection('cafe').getList(1, 10, {
-      filter: `cafeName~"${keyword}"`,
-      expand: ['hashtag', 'review'],
-    });
-  } else {
-    data = await pb.collection('cafe').getList(1, 10, {});
-  }
-
-  return data;
-};
+interface Params {
+  params: {
+    keyword: string;
+  };
+}
 
 function SearchResultPage() {
-  const loadedData = useLoaderData();
-
+  const loadedData: SearchResult = useLoaderData() as SearchResult;
   const totalResults = loadedData.items.length;
   return (
     <div className="flex h-svh flex-col">
@@ -40,7 +37,7 @@ function SearchResultPage() {
           ))}
         </div>
       ) : (
-        <NoResult />
+        <NoResult>검색 결과가 없습니다.</NoResult>
       )}
       <TabBar />
     </div>
@@ -48,3 +45,21 @@ function SearchResultPage() {
 }
 
 export default SearchResultPage;
+
+export const fetchSearch = async ({ params }: Params) => {
+  const { keyword } = params;
+
+  let data;
+
+  if (keyword) {
+    data = await pb.collection('cafe').getList(1, 10, {
+      filter: `cafeName~"${keyword}"`,
+      expand: 'hashtag, review',
+    });
+    console.log(data);
+  } else {
+    data = await pb.collection('cafe').getList(1, 10, {});
+  }
+
+  return data;
+};

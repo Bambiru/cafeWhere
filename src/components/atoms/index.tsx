@@ -15,3 +15,8 @@ export { default as MainHeader } from './MainHeader/MainHeader';
 export { default as TabBar } from './TabBar/TabBar';
 
 export { default as Divider } from './Divider/Divider';
+export { default as CafeReviewInfo } from './CafeReviewInfo/CafeReviewInfo';
+export { default as CategoryListName } from './CategoryListName/CategoryListName';
+export { default as SelectRegion } from './SelectRegion/SelectRegion';
+export { default as TabButton } from './TabButton/TabButton';
+export { default as Loading } from './Loading/Loading';

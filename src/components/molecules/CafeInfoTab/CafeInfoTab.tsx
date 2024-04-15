@@ -1,11 +1,10 @@
-// CafeInfoTab.js
-import TabButton from '../TabButton/TabButton';
 import { useActiveTabStore } from '@/store';
+import { TabButton } from '@/components/atoms';
 
 function CafeInfoTab() {
   const { activeTab, setActiveTab } = useActiveTabStore();
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
 

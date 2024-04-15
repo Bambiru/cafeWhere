@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface headerBar {
-  name?: string;
+  name?: string | ReactNode;
   showHomeBtn?: boolean;
 }
 

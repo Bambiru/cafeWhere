@@ -1,11 +1,11 @@
 import { HeaderBar, TabBar } from '@/components/atoms';
 import LoginButton from '@/components/atoms/LoginButton/LoginButton';
 import SearchBar from '@/components/atoms/Searchbar/Searchbar';
+import { AllHashtagList } from '@/components/organisms';
 import { useHashtagStore, useTabStore } from '@/store';
 import pb from '@/utils/pocketbase';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AllHashtagList } from '..';
 
 function HashSearchPage() {
   const navigate = useNavigate();

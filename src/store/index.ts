@@ -6,3 +6,4 @@ export { default as useHashtagStore } from './useHashtagStore';
 export { default as useCafeListStore } from './useCafeListStore';
 export { default as useActiveTabStore } from './useActiveTabStore';
 export { default as useSearchCafeListStore } from './useSearchCafeListStore';
+export { useUserIdStore as useUserIdStore } from './useLoginStore';

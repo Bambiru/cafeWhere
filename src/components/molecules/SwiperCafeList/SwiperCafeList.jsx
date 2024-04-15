@@ -1,8 +1,8 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { CategoryCafeList } from '@/components/molecules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import CategoryCafeList from './CategoryCafeList';
+import { FreeMode, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 function SwiperCafeList({ data }) {
   return (

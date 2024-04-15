@@ -18,7 +18,7 @@ function HashResultPage() {
           ))}
         </div>
       ) : (
-        <NoResult />
+        <NoResult>검색 결과가 없습니다.</NoResult>
       )}
       <TabBar />
     </div>

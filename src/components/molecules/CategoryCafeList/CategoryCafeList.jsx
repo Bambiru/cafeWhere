@@ -1,8 +1,7 @@
-import { Wish } from '@/components/atoms';
-import Hashtag from '../atoms/Hashtag/Hashtag';
+import { CafeReviewInfo, Wish } from '@/components/atoms';
+import Hashtag from '../../atoms/Hashtag/Hashtag';
 import { pbImg } from '@/utils/pocketbase';
 import { Link } from 'react-router-dom';
-import CafeReviewInfo from '../atoms/CafeReviewInfo/CafeReviewInfo';
 
 function CategoryCafeList({ data }) {
   return (

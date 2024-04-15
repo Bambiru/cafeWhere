@@ -59,7 +59,7 @@ const navigationItems = [
   },
   {
     id: 'cafe',
-    path: '/cafeList/:keyword',
+    path: '/cafeList/:region/:keyword',
     text: '카페리스트 페이지',
     element: <CafeListPage />,
   },

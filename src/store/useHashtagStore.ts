@@ -2,9 +2,9 @@ import { create } from 'zustand';
 
 const useHashtagStore = create((set) => ({
   hashtag: [],
-  setHashtag: (newHashtag) => set({ hashtag: newHashtag }),
+  setHashtag: (newHashtag: string) => set({ hashtag: newHashtag }),
   searchHashtag: { item: [] },
-  setSearchHashtag: (newSearchHashtag) =>
+  setSearchHashtag: (newSearchHashtag: string) =>
     set(() => ({ searchHashtag: newSearchHashtag })),
   resetHashtag: () => set({ hashtag: [] }),
 }));

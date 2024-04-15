@@ -1,5 +1,5 @@
-import SwiperCafeList from '@/components/SwiperCafeList/SwiperCafeList';
-import { HeaderBar, TabBar } from '@/components/atoms';
+import SwiperCafeList from '@/components/molecules/SwiperCafeList/SwiperCafeList';
+import { HeaderBar, TabBar, Loading } from '@/components/atoms';
 import SearchBar from '@/components/atoms/Searchbar/Searchbar';
 import { useSearchCafeListStore, useWordStore } from '@/store';
 import useSearchTermStore from '@/store/useSearchTermStore';
@@ -11,22 +11,22 @@ const spanStyle = 'flex flex-col py-4 px-5';
 function SearchPage() {
   const { searchCafeList, setSearchCafeList } = useSearchCafeListStore();
   const { searchTerm } = useSearchTermStore();
-  const [loading, setLoading] = useState(true); // 로딩 상태 추가
+  const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
 
   const { words } = useWordStore();
 
   const fetchData = async () => {
-    setLoading(true); // 데이터 가져오는 중이라는 상태 설정
+    setIsLoading(true);
     const filteredCafes = await pb.collection('cafe').getFullList({
       filter: `cafeName~'${searchTerm}'`,
       expand: 'hashtag',
     });
     setSearchCafeList(filteredCafes);
-    setLoading(false);
+    setIsLoading(false);
   };
   useEffect(() => {
     fetchData();
-  }, [searchTerm]); // 검색어가 변경될 때마다 데이터 다시 가져오기
+  }, [searchTerm]);
 
   return (
     <>
@@ -34,8 +34,8 @@ function SearchPage() {
         <HeaderBar name="카페 검색하기" />
         <SearchBar />
 
-        {loading ? (
-          <div>Loading...</div> // 데이터를 가져오는 동안 로딩 메시지 표시
+        {isLoading ? (
+          <Loading />
         ) : (
           <>
             <div>
