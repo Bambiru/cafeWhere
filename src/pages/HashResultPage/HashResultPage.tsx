@@ -6,7 +6,7 @@ import { useHashtagStore } from '@/store';
 
 function HashResultPage() {
   const { searchHashtag } = useHashtagStore();
-
+  console.log(searchHashtag);
   return (
     <div className="flex h-svh flex-col">
       <HeaderBar name="해시태그 검색" />

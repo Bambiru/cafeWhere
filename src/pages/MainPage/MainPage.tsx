@@ -1,6 +1,6 @@
-import SwiperCafeList from '@/components/molecules/SwiperCafeList/SwiperCafeList';
 import { CategoryListName, MainHeader, TabBar } from '@/components/atoms';
 import { HeaderSwiper } from '@/components/molecules';
+import SwiperCafeList from '@/components/molecules/SwiperCafeList/SwiperCafeList';
 import { CafeListItem, Category, Footer } from '@/components/organisms';
 import { useCafeListStore, useRegionStore, useTabStore } from '@/store';
 import pb from '@/utils/pocketbase';

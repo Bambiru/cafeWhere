@@ -1,11 +1,16 @@
 import { HeaderBar, TabBar } from '@/components/atoms';
+import { useTabStore } from '@/store';
 import { useUserDataStore } from '@/store/useLoginStore';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SelectLoginPage from '../SelectLoginPage/SelectLoginPage';
-import { useTabStore } from '@/store';
-import { useEffect } from 'react';
 
-function PageSection({ title, onClick }) {
+interface PageSection {
+  title: string;
+  onClick?: () => void;
+}
+
+function PageSection({ title, onClick }: PageSection) {
   return (
     <div
       onClick={onClick}
@@ -27,10 +32,6 @@ function MyPage() {
     alert('로그아웃 되었습니다');
     navigate('/');
   };
-
-  // const userDataState = JSON.parse(
-  //   localStorage.getItem('pocketbase_auth')
-  // ).model;
 
   const { userDataState } = useUserDataStore();
 

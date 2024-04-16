@@ -1,6 +1,11 @@
 import { create } from 'zustand';
 
-const useRegionStore = create((set) => ({
+interface Region {
+  region: string;
+  setRegion: (value: string) => void;
+}
+
+const useRegionStore = create<Region>()((set) => ({
   region: '종로구',
   setRegion: (newRegion) => set({ region: newRegion }),
 }));

@@ -2,7 +2,7 @@ import { RecordModel } from 'pocketbase';
 import { create } from 'zustand';
 
 interface cafeList {
-  cafeList: null | {};
+  cafeList: null | RecordModel[];
   setCafeList: (value: RecordModel[] | undefined) => void;
 }
 

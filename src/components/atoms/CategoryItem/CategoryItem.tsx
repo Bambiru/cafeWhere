@@ -1,7 +1,12 @@
 import { useRegionStore } from '@/store';
 import { Link } from 'react-router-dom';
 
-function CategoryItem({ icon, keyword, backgroundColor }) {
+interface CategoryItemProps {
+  icon: string;
+  keyword: string;
+  backgroundColor: string;
+}
+function CategoryItem({ icon, keyword, backgroundColor }: CategoryItemProps) {
   const { region } = useRegionStore();
 
   return (

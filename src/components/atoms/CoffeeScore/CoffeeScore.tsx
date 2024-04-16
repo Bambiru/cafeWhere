@@ -1,4 +1,4 @@
-function CoffeeScore({ score }) {
+function CoffeeScore({ score }: { score: number }) {
   switch (score) {
     case 0:
       return <img src="/images/review/property-0.svg" alt="0점 리뷰" />;
