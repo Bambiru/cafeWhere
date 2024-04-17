@@ -1,5 +1,6 @@
 import visibleIcon from '/visible.png';
 import hiddenIcon from '/hidden.png';
+import { PasswordVisible } from '@/components/molecules/InputField/InputField';
 
 const icon = {
   visible: {
@@ -12,7 +13,10 @@ const icon = {
   },
 };
 
-function PasswordIcon({ passwordVisible, setPasswordVisible }) {
+function PasswordIcon({
+  passwordVisible,
+  setPasswordVisible,
+}: PasswordVisible) {
   const iconType = icon[passwordVisible ? 'visible' : 'hidden'];
   return (
     <button

@@ -1,4 +1,4 @@
-function ReviewKeywordsRank(count) {
+function ReviewKeywordsRank() {
   return (
     <>
       <div className="m-5 border pb-14pxr pl-4 pr-27pxr pt-22pxr">

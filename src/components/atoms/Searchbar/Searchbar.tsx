@@ -1,6 +1,6 @@
 import { useWordStore } from '@/store';
 import useSearchTermStore from '@/store/useSearchTermStore';
-import { useEffect } from 'react';
+import { ChangeEvent, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
@@ -8,11 +8,11 @@ function SearchBar() {
   const { searchTerm, setSearchTerm } = useSearchTermStore();
   const { words, setWords } = useWordStore();
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!searchTerm) return;

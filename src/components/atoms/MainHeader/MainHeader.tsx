@@ -1,4 +1,4 @@
-import SelectRegion from './../SelectRegion/SelectRegion';
+import SelectRegion from '../SelectRegion/SelectRegion';
 import { Link } from 'react-router-dom';
 
 function MainHeader() {

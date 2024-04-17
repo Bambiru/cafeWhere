@@ -6,17 +6,19 @@ import {
   UserInfoLabel,
 } from '@/components/atoms';
 
-interface inputField {
+export interface PasswordVisible {
+  passwordVisible: boolean;
+  setPasswordVisible: Dispatch<SetStateAction<boolean>>;
+}
+interface InputField extends PasswordVisible {
   id: string;
   label: string;
   type: string;
-  placeholder: string;
+  placeholder?: string;
   required?: true;
   message?: string;
-  setUser: (value: string) => void;
+  setUser?: (value: string) => void;
   validateInput?: (value: string) => boolean | string;
-  passwordVisible?: boolean;
-  setPasswordVisible?: Dispatch<SetStateAction<boolean>>;
 }
 
 function InputField({
@@ -30,7 +32,7 @@ function InputField({
   validateInput,
   passwordVisible,
   setPasswordVisible,
-}: inputField) {
+}: InputField) {
   const [error, setError] = useState({
     borderColor: 'border-greyscale-70',
     message: '',
@@ -51,7 +53,7 @@ function InputField({
           validateInput={validateInput}
           setError={setError}
         />
-        {label.includes('비밀번호') && (
+        {label?.includes('비밀번호') && (
           <PasswordIcon
             passwordVisible={passwordVisible}
             setPasswordVisible={setPasswordVisible}

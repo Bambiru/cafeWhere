@@ -1,9 +1,10 @@
 import { useRegionStore } from '@/store';
+import { ChangeEvent } from 'react';
 
 function SelectRegion() {
   const { region, setRegion } = useRegionStore();
 
-  const handleChangeRegion = (e) => {
+  const handleChangeRegion = (e: ChangeEvent<HTMLSelectElement>) => {
     setRegion(e.target.value);
   };
 
