@@ -1,6 +1,6 @@
 interface UserInfoLabel {
   id: string;
-  label: string;
+  label: string | undefined;
 }
 
 function UserInfoLabel({ id, label }: UserInfoLabel) {

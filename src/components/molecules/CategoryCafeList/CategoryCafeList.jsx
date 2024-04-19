@@ -1,5 +1,4 @@
-import { CafeReviewInfo, Wish } from '@/components/atoms';
-import Hashtag from '../../atoms/Hashtag/Hashtag';
+import { CafeReviewInfo, Wish, Hashtag } from '@/components/atoms';
 import { pbImg } from '@/utils/pocketbase';
 import { Link } from 'react-router-dom';
 

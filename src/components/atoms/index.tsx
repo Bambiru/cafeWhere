@@ -20,3 +20,4 @@ export { default as CategoryListName } from './CategoryListName/CategoryListName
 export { default as SelectRegion } from './SelectRegion/SelectRegion';
 export { default as TabButton } from './TabButton/TabButton';
 export { default as Loading } from './Loading/Loading';
+export { default as Hashtag } from './Hashtag/Hashtag';

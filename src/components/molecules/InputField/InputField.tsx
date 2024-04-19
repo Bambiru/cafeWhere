@@ -7,12 +7,12 @@ import {
 } from '@/components/atoms';
 
 export interface PasswordVisible {
-  passwordVisible: boolean;
-  setPasswordVisible: Dispatch<SetStateAction<boolean>>;
+  passwordVisible?: boolean;
+  setPasswordVisible?: Dispatch<SetStateAction<boolean>>;
 }
-interface InputField extends PasswordVisible {
+export interface InputField extends PasswordVisible {
   id: string;
-  label: string;
+  label?: string;
   type: string;
   placeholder?: string;
   required?: true;

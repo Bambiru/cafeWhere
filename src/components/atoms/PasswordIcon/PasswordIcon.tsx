@@ -22,7 +22,7 @@ function PasswordIcon({
     <button
       type="button"
       className="cursor-pointer p-4"
-      onClick={() => setPasswordVisible(!passwordVisible)}
+      onClick={() => setPasswordVisible?.(!passwordVisible)}
       title={iconType.alt}
     >
       <img src={iconType.src} alt={iconType.alt} />
